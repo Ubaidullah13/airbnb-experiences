@@ -1,18 +1,25 @@
-import KatieZaferes from "../assets/images/KatieZaferes.png"
+//import KatieZaferes from "../assets/images/KatieZaferes.png"
 import star from "../assets/images/Star.png"
 
-export default function Card(){
+export default function Card(props){
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
     return(
         <div className="card">
-            <img src={KatieZaferes} alt="Katie Zaferes" className="card--img" />
+            { badgeText &&<div className="card--badge">{badgeText}</div>}
+            <img src={require(`../assets/images/${props.coverImg}`)} alt={props.img} className="card--img" />
             <div className="card--stats">
                 <img src={star} alt="rating" className="card--star"/>
-                <span>5.0</span>
-                <span className="gray">&nbsp;(6) • </span>
-                <span className="gray">&nbsp;USA</span>
+                <span>{props.stats.rating}</span>
+                <span className="gray">&nbsp;({props.stats.reviewCount}) • </span>
+                <span className="gray">&nbsp;{props.location}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><b>From $136</b> / person</p>
+            <p>{props.title}</p>
+            <p><b>From ${props.price}</b> / person</p>
         </div>
     )
 }

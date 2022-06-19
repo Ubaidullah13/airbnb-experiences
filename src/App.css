@@ -42,13 +42,19 @@ section {
 }
 
 .card {
-  width: 175px;
+  width: 180px;
   font-size: 12px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .card--img {
   width: 100%;
   border-radius: 10px;
+  margin-bottom: 9px;
+  height: 225px;
 }
 
 .card--stats {
@@ -58,4 +64,30 @@ section {
 
 .card--star {
   height: 14px;
+}
+
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card--price {
+  margin-top: auto;
+}
+
+.card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
