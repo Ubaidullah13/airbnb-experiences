@@ -1,6 +1,6 @@
 # Final Result
 
-![output]([http://url/to/img.png](https://github.com/Ubaidullah13/airbnb-experiences/blob/main/public/airbnb-experiences.png))
+![output](https://github.com/Ubaidullah13/airbnb-experiences/blob/main/public/airbnb-experiences.png?raw=true)
 
 # Getting Started with Create React App
 
